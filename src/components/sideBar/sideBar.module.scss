@@ -1,0 +1,46 @@
+.wrapper {
+    margin-top: 60px;
+    color: aliceblue;
+}
+
+.SB {
+    position: fixed;
+    height: 704px;
+    min-height: 704px;
+    margin-top: -4px;
+    border-right: 1px solid #5f5c5c;
+    width: 40px;
+    // border-top: 1px solid #504e4e;
+    background-color: rgba(14, 18, 23, 1);
+}
+
+.sb-1 {
+    height: 175px;
+    cursor: pointer;
+    margin-top: 70px;
+}
+
+.sb-2 {
+    height: 175px;
+    cursor: pointer;
+
+}
+
+.sb-3 {
+    height: 175px;
+    cursor: pointer;
+
+}
+
+.sb-4 {
+    height: 175px;
+    cursor: pointer;
+
+}
+
+
+
+
+.content {
+    flex: 10;
+}

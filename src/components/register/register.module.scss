@@ -1,0 +1,74 @@
+.from-Register {
+    position: relative;
+    max-width: 300px;
+    width: 300px;
+    background-color: gray;
+    display: inline-flexbox;
+    height: 400px;
+    max-height: 400px;
+    border-radius: 20px;
+    background-color: rgb(72, 72, 139);
+    color: black;
+    overflow: hidden;
+
+    .text-input {
+        margin-top: 5px;
+        background-color: rgb(59, 55, 110);
+        height: 225px;
+
+        .input-Register {
+            margin-top: 10px;
+            width: 100px;
+            height: 25px;
+
+            &:hover {
+                animation: inputText ease .6s both;
+                box-shadow: 1px 1px 10px 3px #c3db0b;
+            }
+        }
+
+        .btn-Register {
+            position: absolute;
+            right: 0;
+            margin-right: 30px;
+            bottom: 0;
+            margin-bottom: 30px;
+
+            .btn-Register1 {
+                margin-right: 10px;
+                min-width: 70px;
+                max-width: 70px;
+                width: 70px;
+                overflow: hidden;
+                border-radius: 5px;
+                border: none;
+            }
+
+            .btn-register1 {
+                margin-left: 10px;
+                min-width: 70px;
+                max-width: 70px;
+                width: 70px;
+                overflow: hidden;
+                border-radius: 5px;
+                border: none;
+            }
+        }
+
+        .title-input {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+    }
+}
+
+@keyframes inputText {
+    from {
+        width: 100px;
+    }
+
+    to {
+        width: 200px;
+    }
+}
