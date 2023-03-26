@@ -9,7 +9,7 @@
 
     &:hover {
         opacity: 0.7;
-        animation: forFilm ease .5s both, forAn ease .3s infinite;
+        animation: forFilm ease .8s both, forAn ease .3s infinite;
         animation-direction: alternate;
     }
 
@@ -80,6 +80,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
+    color: white;
 }
 
 .like {

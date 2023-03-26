@@ -24,7 +24,14 @@ const HOME = () => {
                 return res.json()
             })
             .then((data) => {
-                setFilms(data)
+                const newData = data.data[0]
+                const arr = []
+
+                for (let i = 0; i < 12; i++) {
+                    arr.push(newData[i])
+                }
+
+                setFilms(arr)
             })
             .catch((err) => {
                 console.log(err)
@@ -58,7 +65,7 @@ const HOME = () => {
                     }}>ADD shortcuts +</button>
                 </div>
                 <div className={cx('print-films')}>
-                    {films.map((film) => {
+                    {films?.map((film) => {
                         return <Films key={film._id} data={film} />
                     })}
                 </div>

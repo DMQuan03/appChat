@@ -51,6 +51,34 @@
     text-align: center;
     align-items: center;
     margin-left: 10px;
+
+    .logo-text1 {
+        color: #f1240d;
+        animation: avtLine .5s ease infinite;
+    }
+
+    .logo-text2 {
+        color: rgb(235, 228, 14);
+    }
+
+    @keyframes avtLine {
+        0% {
+            color: #f1240d;
+        }
+
+        40% {
+            color: #0cd813;
+        }
+
+
+        80% {
+            color: #deefdc;
+        }
+
+        100% {
+            color: #0311ad;
+        }
+    }
 }
 
 .h-logo {

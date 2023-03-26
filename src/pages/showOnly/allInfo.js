@@ -19,9 +19,10 @@ const AllInfo = () => {
     const [isFetching, setIsfetching] = useState(true)
     const [checkTrue, setCheckTrue] = useState(false)
     const [checkLogin, setCheckLogin] = useState(false)
+    const [isSend, setIsSend] = useState(2)
 
     const [textMess, setTextMess] = useState([])
-    const [listMess, setListMess] = useState([])
+    const [listMess, setListMess] = useState([""])
     const [textMs, setTextMs] = useState("")
     const user = sessionStorage.getItem("username")
     const avt = sessionStorage.getItem("avatar")
@@ -37,9 +38,12 @@ const AllInfo = () => {
             axios.post("http://localhost:6875/v1/mess/createMess", data)
                 .then((res) => {
                     console.log("success")
+                    setIsSend(1)
+                    setTimeout(() => {
+                        setIsSend(2)
+                    }, 1);
                 })
                 .catch((err) => {
-                    console.log(err.response.data.message)
                     setCheckLogin(true)
                     setTimeout(() => {
                         setCheckLogin(false)
@@ -56,14 +60,16 @@ const AllInfo = () => {
         data
             .then((res) => {
                 setInfo(res)
+                setTimeout(() => {
+                    setIsfetching(false)
+                }, 1);
             })
             .catch(() => {
                 setCheckTrue(false)
             })
 
-
         return () => {
-            setIsfetching(false)
+            setIsfetching(true)
         }
     }, [isFetching])
 
@@ -87,12 +93,12 @@ const AllInfo = () => {
 
 
 
-    useEffect(() => {
+    useMemo(() => {
         const result = textMess.filter((text) => {
             return text.MessID == info.data.BlogId
         })
         setListMess(result)
-    }, [textMs])
+    }, [isSend])
 
 
 
@@ -114,11 +120,11 @@ const AllInfo = () => {
                         <div style={{ backgroundColor: "gray", height: 40, marginTop: 100, display: 'flex' }}>
                             <div style={{ marginLeft: 10, display: "flex", justifyContent: "center", alignItems: "center" }}>
                                 <span>Like : </span>
-                                <p style={{ marginLeft: 10 }}>{info.data.like.length}</p>
+                                <p style={{ marginLeft: 10 }}>{info.data.like}</p>
                             </div>
                             <div style={{ marginLeft: 10, display: "flex", justifyContent: "center", alignItems: "center" }}>
                                 <span>Share : </span>
-                                <p style={{ marginLeft: 10 }}>{info.data.share.length}</p>
+                                <p style={{ marginLeft: 10 }}>{info.data.share}</p>
                             </div>
                         </div>
                     </div>
@@ -151,7 +157,7 @@ const AllInfo = () => {
                     >ban can login de send message</div> : <Fragment />}
                 </div>
                 :
-                <div style={{ color: "white" }}>NOT FOUND</div>}
+                <div className={cx("NOT-FOUND")} style={{ color: "white" }}>NOT FOUND</div>}
 
         </div>
     )

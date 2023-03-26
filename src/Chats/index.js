@@ -8,6 +8,8 @@ const cx = classNames.bind(styles)
 
 const Chat = ({ data, id }) => {
 
+
+
     return (
         <div id={cx(id)} className={cx("wrapper")}>
             <div id={cx(id)} className={cx("img-mess")}>
