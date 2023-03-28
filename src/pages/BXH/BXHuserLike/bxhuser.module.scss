@@ -3,7 +3,21 @@
     height: 600px;
     width: 1400px;
     margin-left: 50px;
+    margin-top: 82px;
     height: auto;
     min-height: 650px;
     align-items: center;
+
+    .Header {
+        background-color: rgb(39, 80, 117);
+        font-weight: 700;
+        color: rgb(255, 251, 0);
+        font-size: 1.6rem;
+        width: 1400px;
+        height: 80px;
+        margin-top: -82px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

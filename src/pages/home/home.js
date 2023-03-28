@@ -27,7 +27,7 @@ const HOME = () => {
                 const newData = data.data[0]
                 const arr = []
 
-                for (let i = 0; i < 20; i++) {
+                for (let i = 0; i < 12; i++) {
                     if (typeof newData[i] !== "undefined") {
                         arr.push(newData[i])
                     }

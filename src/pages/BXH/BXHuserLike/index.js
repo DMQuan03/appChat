@@ -41,12 +41,13 @@ const BXHUSER = () => {
     }, [loading])
     return (
         <div className={cx("wrapper")}>
+            <div className={cx("Header")} style={{ position: "fixed" }}>BXH HOT TREND 2023</div>
             {films.map((film, index) => {
-                if (index == 0) {
+                if (index === 0) {
                     var id = "one"
-                } else if (index == 1) {
+                } else if (index === 1) {
                     var id = "two"
-                } else if (index == 2) {
+                } else if (index === 2) {
                     var id = "three"
                 } else {
                     var id = ""

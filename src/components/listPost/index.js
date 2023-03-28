@@ -12,9 +12,7 @@ const POSTBLOG = ({ data }) => {
     const admin = sessionStorage.getItem("admin")
     const token = sessionStorage.getItem("accessToken")
 
-    useEffect(() => {
-        console.log(data._id)
-    }, [])
+
     return (
         <div className={cx("wrapper")}>
             <div className={cx("user-info")}>
@@ -37,8 +35,17 @@ const POSTBLOG = ({ data }) => {
                     borderRadius: 20
                 }}><img style={{ width: "100%", height: "100%", marginLeft: -16, marginTop: -1 }} src={data.img} alt={data.username} /></div>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-                <span><AiOutlineHeart /></span>
+            <div style={{ display: "flex", justifyContent: "space-around" }} >
+                <span onClick={() => {
+                    axios.request({
+                        method: "PATCH",
+                        url: `http://localhost:6875/v1/blog/${data._id}/like`,
+                        headers: {
+                            authorization: `Bearer ${token}`
+                        }
+                    })
+
+                }}><AiOutlineHeart /><span style={{ marginLeft: 10 }}>{data.like}</span></span>
                 <span ><AiOutlineComment /></span>
                 {userId === data?.IdBlog || admin === "true" ? <span><AiFillDelete onClick={() => {
                     axios({
