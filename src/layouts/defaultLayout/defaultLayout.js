@@ -9,13 +9,11 @@ const cx = classNames.bind(styles)
 
 const DefaultLayout = ({ children }) => {
 
-    const [logo, setLogo] = useState("")
-    const username = sessionStorage.getItem("username")
-    const userID = localStorage.getItem("userID")
+
 
     return (
         <div>
-            <header className={cx("wrapper")}><Header logo={logo} /></header>
+            <header className={cx("wrapper")}><Header /></header>
             <main className={cx("sb-ct")}>
                 <SideBar />
                 <div className={cx("contents")}>{children}</div>

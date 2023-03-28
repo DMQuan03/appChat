@@ -1,0 +1,207 @@
+#wrapper {
+    background-color: aliceblue;
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    height: 90%;
+    min-height: 90%;
+    margin-left: 4%;
+    margin-top: -2%;
+    overflow: hidden;
+    height: auto;
+
+    .intro {
+        background-color: #38485a;
+        background-color: #1e2832;
+        background-color: #1c232b;
+
+        z-index: 10;
+        width: 100%;
+        max-width: 80%;
+        min-width: 90%;
+        margin-top: 0px;
+        height: 30%;
+        position: fixed;
+        border-bottom: 1px #d1caca solid;
+
+        .avt-user {
+            right: 0;
+            margin-top: 9%;
+            width: 15%;
+            height: 90%;
+            border-radius: 50%;
+        }
+
+        .username {
+            color: rgb(213, 235, 15);
+        }
+    }
+
+    .content {
+        margin-top: 10%;
+        width: 100%;
+        display: flex;
+
+        .intro-user {
+            background-color: rgb(43, 255, 0);
+            background-color: #1c232b;
+            color: burlywood;
+            border-top: 1px #d1caca solid;
+
+            position: fixed;
+            margin-top: 80px;
+            width: 25%;
+            height: 504px;
+            max-height: 504px;
+            min-height: 504px;
+
+            .des-intro {
+                background-color: rgb(94, 89, 91);
+                background-color: #1c232b;
+
+                width: 100%;
+                height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .text-des {
+                    background-color: burlywood;
+                    color: black;
+
+                    width: 200px;
+                    height: auto;
+                    max-height: 60px;
+                    min-height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    font-weight: 700;
+                }
+
+            }
+
+            .time-register {
+                background-color: aqua;
+                background-color: #1c232b;
+                border-top: 1px solid #d1caca;
+
+                width: 100%;
+                height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 700;
+            }
+
+            .likeOfUser {
+                background-color: rgb(209, 209, 22);
+                background-color: #e8ebef;
+                background-color: #1c232b;
+                border-top: 1px solid #d4cccc;
+                width: 100%;
+                height: auto;
+                min-height: 80px;
+                max-height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 700;
+            }
+        }
+
+        .content-user {
+            background-color: #3c424a;
+            margin-left: 27.8%;
+            margin-top: 80px;
+            width: 72.3%;
+            height: auto;
+            padding-bottom: 30px;
+            min-height: 600px;
+
+            .nones {
+                background-color: rgb(77, 255, 0);
+                background-color: #3c424a;
+
+                width: 65%;
+                height: 120px;
+                position: fixed;
+                z-index: 1;
+            }
+
+            .add-films {
+                margin-top: 150px;
+                display: flex;
+                width: 40%;
+                height: 100px;
+                background-color: #3c424a;
+                z-index: 0;
+                margin-left: 300px;
+                border-radius: 20px;
+                animation: addShortCut ease .8s infinite alternate;
+
+                .add-text {
+                    flex: 3;
+                    background-color: #192b42;
+                    border-bottom-left-radius: 20px;
+                    border-top-left-radius: 20px;
+
+
+                    .input-text-add {
+                        border: none;
+
+                        &:hover {
+                            animation: inputAni ease .5s both;
+                            box-shadow: 1px 1px 10px 3px rgb(169, 127, 71);
+                            cursor: pointer;
+                        }
+                    }
+
+                    @keyframes inputAni {
+                        from {
+                            width: 170px;
+                        }
+
+                        to {
+                            width: 250px;
+                        }
+                    }
+
+                }
+
+                .add-btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 1;
+                    background-color: #192b42;
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
+
+                    .btn-add-text {
+                        &:hover {
+                            opacity: 1;
+                            box-shadow: 2px 2px 10px 3px chartreuse;
+                        }
+                    }
+                }
+            }
+
+            @keyframes addShortCut {
+                from {
+                    transform: translateY(0);
+                    box-shadow: 0px 0px 5px 3px #db3b1b;
+                }
+
+                to {
+                    box-shadow: 5px 5px 20px 7px #db3b1b;
+
+                    transform: translateY(-15px);
+                }
+            }
+        }
+    }
+
+
+}

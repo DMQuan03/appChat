@@ -35,8 +35,8 @@ const Login = () => {
                 const username = user.data.username
                 const userId = user.data._id
                 const avatar = user.data.avatar
+                const accessToken = user.data.accessToken
 
-                console.log(user)
 
 
                 sessionStorage.setItem("username", username)
@@ -44,7 +44,8 @@ const Login = () => {
                 sessionStorage.setItem("admin", admin)
                 sessionStorage.setItem("userId", userId)
                 sessionStorage.setItem("avatar", avatar)
-                console.log(userId)
+                sessionStorage.setItem("accessToken", accessToken)
+                // document.cookie = `token=${accessToken}`
                 navigate("/")
             } else {
                 setCheckSuccess(false)
@@ -75,7 +76,6 @@ const Login = () => {
                     <Col pan={24}>
                         <input className={cx("input-login")} type={"password"} onChange={(e) => {
                             setPassword(e.target.value)
-                            console.log(pass)
                         }} />
                     </Col>
                     <div className={cx('btn-login')}>

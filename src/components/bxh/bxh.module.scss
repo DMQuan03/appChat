@@ -1,0 +1,87 @@
+.wrapper {
+    background-color: rgb(15, 12, 72);
+    height: 150px;
+    border-radius: 20px;
+    width: 1000px;
+    margin-top: 20px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: burlywood;
+
+    .header {
+        background-color: rgb(57, 70, 70);
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        border-radius: 20px;
+        align-items: center;
+
+        .top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blue;
+            background-color: rgb(28, 27, 51);
+            width: 40%;
+            margin-left: 0px;
+            height: 100%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .name-avt {
+            background-color: yellow;
+            width: 70%;
+            height: 100%;
+
+            .img-user {
+                background-color: aquamarine;
+                background-color: rgb(28, 27, 51);
+
+                width: 100%;
+                height: 70%;
+            }
+
+            .name-user {
+                background-color: rgb(30, 28, 78);
+                background-color: rgb(28, 27, 51);
+
+
+                width: 100%;
+                height: 30%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .top {
+            font-size: 1.2rem;
+        }
+    }
+
+    .info {
+        flex: 3;
+    }
+
+    #one.top1 {
+        font-size: 5rem;
+        color: rgb(213, 22, 22);
+
+    }
+}
+
+
+#two {
+    font-size: 4rem;
+    color: rgb(213, 22, 22);
+}
+
+#three {
+    font-size: 3rem;
+    color: rgb(213, 22, 22);
+}

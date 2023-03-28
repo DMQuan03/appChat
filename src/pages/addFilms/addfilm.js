@@ -19,6 +19,7 @@ const AddFilms = () => {
     const [username, setUserName] = useState('')
     const user = sessionStorage.getItem("username")
     const avtUser = sessionStorage.getItem("avatar")
+    const userId = sessionStorage.getItem("userId")
 
     const [checked, setCheced] = useState(false)
     const [MESSFAIL, setMESSFAIL] = useState(false)
@@ -46,11 +47,22 @@ const AddFilms = () => {
                     username: username,
                     description: des,
                     avatar: av,
+                    main: userId,
                     url: ur,
                     BlogId: uuidV4,
-                    avtUser: avtUser
+                    avtUser: avtUser,
                 }
-                await axios.post("http://localhost:6875/v1/films/create", data);
+                // await axios.post("http://localhost:6875/v1/films/create", data);
+                const token = sessionStorage.getItem("accessToken")
+
+                await axios({
+                    method: "POST",
+                    url: "http://localhost:6875/v1/films/create",
+                    data: data,
+                    headers: {
+                        authorization: `Bearer ${token}`
+                    }
+                })
                 setDescription('')
                 setAvatar("")
                 setUrl("")
@@ -74,10 +86,9 @@ const AddFilms = () => {
 
     useEffect(() => {
         setUserName(user)
-        console.log(username)
 
         return () => {
-            console.log("out")
+            return 1
         }
     }, [])
     return (

@@ -1,0 +1,47 @@
+.wrapper {
+    width: 400px;
+    height: 400px;
+    background-color: #1c1f26;
+    margin-top: 40px;
+    margin-left: 330px;
+    border-radius: 20px;
+    max-height: 400px;
+    min-width: 400px;
+    max-width: 400px;
+    overflow: hidden;
+    color: wheat;
+
+    .user-info {
+        display: flex;
+        justify-content: flex-start;
+        background-color: #1c1f26;
+        align-items: center;
+    }
+
+    .content {
+        width: 100%;
+        background-color: #1c1f26;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-content {
+        background-color: #1c1f26;
+        display: flex;
+        justify-content: center;
+
+        .text-post {
+            background-color: burlywood;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            width: 340px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+    }
+}

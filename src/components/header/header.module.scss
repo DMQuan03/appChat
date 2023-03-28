@@ -43,6 +43,28 @@
             }
         }
     }
+
+    .btn-logout {
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-right: 50px;
+
+        &:hover {
+
+            box-shadow: 1px 5px 10px 4px #f1240d;
+            animation: btnLogOut .5s ease both;
+        }
+    }
+
+    @keyframes btnLogOut {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(3px);
+        }
+    }
 }
 
 .logo-containers {

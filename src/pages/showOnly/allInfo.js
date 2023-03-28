@@ -25,19 +25,27 @@ const AllInfo = () => {
     const [listMess, setListMess] = useState([""])
     const [textMs, setTextMs] = useState("")
     const user = sessionStorage.getItem("username")
+    const UserId = sessionStorage.getItem("userId")
     const avt = sessionStorage.getItem("avatar")
-    const handlerSendMess = () => {
+    const handlerSendMess = async () => {
 
         try {
-            const data = {
+            const data = await {
                 MessID: info.data.BlogId,
                 username: user,
                 avatar: avt,
                 text: textMs
             }
-            axios.post("http://localhost:6875/v1/mess/createMess", data)
+            const token = await sessionStorage.getItem("accessToken")
+            await axios({
+                method: "POST",
+                url: "http://localhost:6875/v1/mess/createMess",
+                data: data,
+                headers: {
+                    authorization: `Bearer ${token}`
+                }
+            })
                 .then((res) => {
-                    console.log("success")
                     setIsSend(1)
                     setTimeout(() => {
                         setIsSend(2)
@@ -77,7 +85,16 @@ const AllInfo = () => {
         const userNameData = {
             username: user
         }
-        const mess = axios.get("http://localhost:6875/v1/mess/getMess", userNameData)
+
+        const token = sessionStorage.getItem("accessToken")
+        const mess = axios({
+            method: "GET",
+            url: "http://localhost:6875/v1/mess/getMess",
+            data: userNameData,
+            headers: {
+                authorization: `Bearer ${token}`
+            }
+        })
         mess
             .then((res) => {
                 return res
@@ -134,7 +151,7 @@ const AllInfo = () => {
                         </div>
                         <div className={cx("chat-message")}>
                             {listMess.map((mess, index) => {
-                                if (mess.username === user) {
+                                if (mess.IdUser === UserId) {
                                     var id = "YOU"
                                 } else {
                                     var id = "OTHER"
